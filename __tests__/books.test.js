@@ -11,6 +11,12 @@ describe('books routes', () => {
   it('should return a list of books', async () => {
     const res = await request(app).get('/books');
     expect(res.body.length).toEqual(7);
+    expect(res.status).toBe(200);
+    expect(res.body[0]).toEqual({
+      id: expect.any(String),
+      title: expect.any(String),
+      release: expect.any(Number),
+    });
   });
 
   it('should return a book detail with authors', async () => {
