@@ -8,10 +8,10 @@ DROP TABLE IF EXISTS books_authors;
 CREATE TABLE books (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     title VARCHAR NOT NULL,
-    released INT NOT NULL
+    release INT NOT NULL
 );
 
-INSERT INTO books (title, released) 
+INSERT INTO books (title, release) 
 
 VALUES 
   ('Do Androids Dream of Electric Sheep?', 1968),
@@ -43,8 +43,8 @@ VALUES
 
 CREATE TABLE books_authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    authors_id INT,
-    books_id INT,
+    authors_id BIGINT,
+    books_id BIGINT,
     FOREIGN KEY (authors_id) REFERENCES authors(id),
     FOREIGN KEY (books_id) REFERENCES books(id)
 );

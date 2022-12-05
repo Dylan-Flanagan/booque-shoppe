@@ -17,7 +17,7 @@ describe('books routes', () => {
     const res = await request(app).get('/books/1');
     expect(res.body).toEqual({
       title: expect.any(String),
-      released: expect.any(Number),
+      release: expect.any(Number),
       authors: expect.any(Array),
     });
   });
